@@ -8,17 +8,15 @@ Hex project
 # is outdated, rerun scripts/generate.py.
 
 # OpenAPI spec: openapi.yaml
-# Updated at: 2022-09-22T21:26:19.358845
+# Updated at: 2022-09-22T21:31:32.764099
 
-from typing import TYPE_CHECKING, Any, Dict, List, Union  # noqa
+from typing import Any, Dict, List, Union  # noqa
 
 from prefect import task
 
 from prefect_hex import HexCredentials
+from prefect_hex.models import project as models  # noqa
 from prefect_hex.rest import HTTPMethod, _unpack_contents, execute_endpoint
-
-if TYPE_CHECKING:
-    from prefect_hex.models import project as models  # noqa
 
 
 @task
@@ -85,10 +83,6 @@ async def run_project(
 
     contents = _unpack_contents(response, responses)
     return contents
-
-
-if TYPE_CHECKING:
-    from prefect_hex.models import project as models  # noqa
 
 
 @task
@@ -183,10 +177,6 @@ async def cancel_run(
 
     contents = _unpack_contents(response, responses)
     return contents
-
-
-if TYPE_CHECKING:
-    from prefect_hex.models import project as models  # noqa
 
 
 @task

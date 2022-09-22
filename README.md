@@ -46,18 +46,22 @@ pip install prefect-hex
 
 ```python
 from prefect import flow
-from prefect_hex.tasks import (
-    goodbye_prefect_hex,
-    hello_prefect_hex,
-)
+from prefect_hex import HexCredentials
 
+from prefect_hex.project import get_project_runs
 
 @flow
-def example_flow():
-    hello_prefect_hex
-    goodbye_prefect_hex
+def get_project_runs_flow():
+    domain = "app"
+    project_id = 42
+    hex_credentials = HexCredentials(domain=domain)
+    project_runs = get_project_runs(
+        project_id=project_id,
+        hex_credentials=hex_credentials
+    )
+    return project_runs
 
-example_flow()
+get_project_runs_flow()
 ```
 
 ## Resources

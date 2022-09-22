@@ -26,7 +26,7 @@ class HexCredentials(Block):
     """
 
     _block_type_name = "Hex Credentials"
-    # _logo_url = "<LOGO_URL_HERE>"  # noqa
+    _logo_url = "https://images.ctfassets.net/gm98wzqotmnx/3biMverMLGiDA7y5fkqKZF/4b7747052b59fa8182a9686b88ea9541/Hex_Purple__for_light_backgrounds_.png?h=250"  # noqa
 
     domain: str
     token: SecretStr
