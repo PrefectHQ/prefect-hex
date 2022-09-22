@@ -54,5 +54,6 @@ populate_collection_repo(
     overwrite=overwrite,
     preprocess_fn=preprocess_fn,
     repo_directory=REPO_DIRECTORY,
-    base_url="https://{tenant}.hex.tech/api/v1",
+    base_url="https://{domain}.hex.tech/api/v1",
+    group_models_by_module=False,
 )

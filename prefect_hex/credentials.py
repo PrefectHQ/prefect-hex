@@ -12,8 +12,8 @@ class HexCredentials(Block):
     Block used to manage Hex authentication.
 
     Attributes:
-        hex_tenant:
-            Hex tenant used in formatting the endpoint URL.
+        domain:
+            Domain used in formatting the endpoint URL.
         token: The token to authenticate with Hex.
 
 
@@ -28,7 +28,7 @@ class HexCredentials(Block):
     _block_type_name = "Hex Credentials"
     # _logo_url = "<LOGO_URL_HERE>"  # noqa
 
-    hex_tenant: str
+    domain: str
     token: SecretStr
     client_kwargs: Optional[Dict[str, Any]] = None
 
@@ -55,7 +55,7 @@ class HexCredentials(Block):
             example_get_client_flow()
             ```
         """
-        base_url = f"https://{self.hex_tenant}.hex.tech/api/v1"
+        base_url = f"https://{self.domain}.hex.tech/api/v1"
 
         client_kwargs = self.client_kwargs or {}
         client_kwargs["headers"] = {

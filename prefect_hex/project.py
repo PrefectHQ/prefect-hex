@@ -8,7 +8,7 @@ Hex project
 # is outdated, rerun scripts/generate.py.
 
 # OpenAPI spec: openapi.yaml
-# Updated at: 2022-09-22T21:18:02.437846
+# Updated at: 2022-09-22T21:26:19.358845
 
 from typing import TYPE_CHECKING, Any, Dict, List, Union  # noqa
 

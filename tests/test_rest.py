@@ -21,7 +21,7 @@ async def test_execute_endpoint(params, http_method, respx_mock):
         execute_kwargs["json"] = {"key": "val"}
 
     credentials = HexCredentials(
-        hex_tenant="hex_tenant",
+        domain="domain",
         token="token_value",
     )
     response = await execute_endpoint.fn(
