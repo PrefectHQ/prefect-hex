@@ -56,4 +56,5 @@ populate_collection_repo(
     repo_directory=REPO_DIRECTORY,
     base_url="https://{domain}/api/v1",
     group_models_by_module=False,
+    regenerate_module_files=False,
 )

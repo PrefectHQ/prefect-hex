@@ -8,7 +8,7 @@ Hex project
 # is outdated, rerun scripts/generate.py.
 
 # OpenAPI spec: openapi.yaml
-# Updated at: 2022-09-22T22:14:38.414393
+# Updated at: 2022-09-22T23:16:55.466405
 
 from typing import Any, Dict, List, Union  # noqa
 
@@ -183,9 +183,9 @@ async def cancel_run(
 async def get_project_runs(
     project_id: str,
     hex_credentials: "HexCredentials",
-    limit: str = None,
-    offset: str = None,
-    status_filter: str = None,
+    limit: "models.PageSize" = None,
+    offset: "models.Offset" = None,
+    status_filter: "models.ProjectRunStatus" = None,
 ) -> Dict[str, Any]:  # pragma: no cover
     """
     Get the status of the API-triggered runs of a project.
