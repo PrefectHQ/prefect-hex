@@ -55,7 +55,7 @@ class HexCredentials(Block):
             example_get_client_flow()
             ```
         """
-        base_url = f"https://{self.domain}.hex.tech/api/v1"
+        base_url = f"https://{self.domain}/api/v1"
 
         client_kwargs = self.client_kwargs or {}
         client_kwargs["headers"] = {
