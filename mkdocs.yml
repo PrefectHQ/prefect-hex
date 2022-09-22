@@ -48,4 +48,9 @@ plugins:
 
 nav:
     - Home: index.md
-    
+    - Credentials: credentials.md
+    - Rest: rest.md
+    - Project: project.md
+
+    - Models:
+        - models/project.md
