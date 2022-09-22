@@ -8,7 +8,7 @@ Hex project
 # is outdated, rerun scripts/generate.py.
 
 # OpenAPI spec: openapi.yaml
-# Updated at: 2022-09-22T21:31:32.764099
+# Updated at: 2022-09-22T22:14:38.414393
 
 from typing import Any, Dict, List, Union  # noqa
 
@@ -196,11 +196,11 @@ async def get_project_runs(
         hex_credentials:
             Credentials to use for authentication with Hex.
         limit:
-
+            Number of results to fetch per page for paginated requests.
         offset:
-
+            Offset for paginated requests.
         status_filter:
-
+            Current status of a project run.
 
     Returns:
         Upon success, a dict of the response. </br>- `runs: List["models.ProjectStatusResponsePayload"]`</br>- `next_page: str`</br>- `previous_page: str`</br>- `trace_id: "models.TraceId"`</br>

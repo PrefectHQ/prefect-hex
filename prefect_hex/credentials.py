@@ -4,7 +4,7 @@ from typing import Any, Dict, Optional
 
 from httpx import AsyncClient
 from prefect.blocks.core import Block
-from pydantic import SecretStr
+from pydantic import Field, SecretStr
 
 
 class HexCredentials(Block):
@@ -28,8 +28,8 @@ class HexCredentials(Block):
     _block_type_name = "Hex Credentials"
     _logo_url = "https://images.ctfassets.net/gm98wzqotmnx/3biMverMLGiDA7y5fkqKZF/4b7747052b59fa8182a9686b88ea9541/Hex_Purple__for_light_backgrounds_.png?h=250"  # noqa
 
-    domain: str
-    token: SecretStr
+    domain: str = Field(default=..., description="Used in formatting the base URL.")
+    token: SecretStr = Field(default=..., description="Token used for authentication.")
     client_kwargs: Optional[Dict[str, Any]] = None
 
     def get_client(self) -> AsyncClient:
