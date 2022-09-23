@@ -13,10 +13,6 @@ from pydantic import BaseModel, Extra, Field
 
 
 class NextPageUrl(BaseModel):
-    """
-    See source code for the fields' description.
-    """
-
     class Config:
         extra = Extra.allow
         allow_mutation = False
@@ -28,10 +24,6 @@ class NextPageUrl(BaseModel):
 
 
 class Offset(BaseModel):
-    """
-    See source code for the fields' description.
-    """
-
     class Config:
         extra = Extra.allow
         allow_mutation = False
@@ -40,10 +32,6 @@ class Offset(BaseModel):
 
 
 class PageSize(BaseModel):
-    """
-    See source code for the fields' description.
-    """
-
     class Config:
         extra = Extra.allow
         allow_mutation = False
@@ -57,10 +45,6 @@ class PageSize(BaseModel):
 
 
 class ProjectId(BaseModel):
-    """
-    See source code for the fields' description.
-    """
-
     class Config:
         extra = Extra.allow
         allow_mutation = False
@@ -68,13 +52,12 @@ class ProjectId(BaseModel):
     __root__: UUID = Field(
         ...,
         description="Unique ID for a Hex project",
-        regex="^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89ABab][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
     )
 
 
 class ProjectRunStatus(Enum):
     """
-    Current status of a project run
+    Current status of a project run.
     """
 
     pending = "PENDING"
@@ -86,10 +69,6 @@ class ProjectRunStatus(Enum):
 
 
 class RunId(BaseModel):
-    """
-    See source code for the fields' description.
-    """
-
     class Config:
         extra = Extra.allow
         allow_mutation = False
@@ -97,17 +76,10 @@ class RunId(BaseModel):
     __root__: UUID = Field(
         ...,
         description="Unique ID for a run of a Hex project",
-        regex="^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89ABab][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
     )
 
 
 class RunProjectRequestBody(BaseModel):
-    """
-    See source code for the fields' description.
-
-    Request body format for triggering a project run
-    """
-
     class Config:
         extra = Extra.allow
         extra = Extra.forbid
@@ -139,10 +111,6 @@ class RunProjectRequestBody(BaseModel):
 
 
 class RunStatusUrl(BaseModel):
-    """
-    See source code for the fields' description.
-    """
-
     class Config:
         extra = Extra.allow
         allow_mutation = False
@@ -153,9 +121,6 @@ class RunStatusUrl(BaseModel):
 
 
 class RunUrl(BaseModel):
-    """
-    See source code for the fields' description.
-    """
 
     class Config:
         extra = Extra.allow
@@ -168,10 +133,6 @@ class RunUrl(BaseModel):
 
 
 class TraceId(BaseModel):
-    """
-    See source code for the fields' description.
-    """
-
     class Config:
         extra = Extra.allow
         allow_mutation = False
@@ -186,10 +147,6 @@ class TraceId(BaseModel):
 
 
 class TsoaErrorResponsePayload(BaseModel):
-    """
-    See source code for the fields' description.
-    """
-
     class Config:
         extra = Extra.allow
         allow_mutation = False
@@ -200,8 +157,6 @@ class TsoaErrorResponsePayload(BaseModel):
 
 class ProjectRunResponsePayload(BaseModel):
     """
-    See source code for the fields' description.
-
     Response format returned by the runProject endpoint
     """
 
@@ -219,14 +174,11 @@ class ProjectRunResponsePayload(BaseModel):
 
 class ProjectStatusResponsePayload(BaseModel):
     """
-    See source code for the fields' description.
-
     Response format returned by the getRunStatus endpoint
     """
 
     class Config:
         extra = Extra.allow
-        extra = Extra.forbid
         allow_mutation = False
 
     elapsed_time: float = Field(
@@ -253,12 +205,11 @@ class ProjectStatusResponsePayload(BaseModel):
 
 class ProjectRunsResponsePayload(BaseModel):
     """
-    See source code for the fields' description.
+    Response format returned by the getProjectRuns endpoint
     """
 
     class Config:
         extra = Extra.allow
-        extra = Extra.forbid
         allow_mutation = False
 
     next_page: NextPageUrl = Field(..., alias="nextPage")
