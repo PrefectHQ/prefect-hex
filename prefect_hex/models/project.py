@@ -121,7 +121,6 @@ class RunStatusUrl(BaseModel):
 
 
 class RunUrl(BaseModel):
-
     class Config:
         extra = Extra.allow
         allow_mutation = False

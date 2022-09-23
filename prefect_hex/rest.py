@@ -106,7 +106,7 @@ async def execute_endpoint(
             endpoint = f"/project/5a8591dd-4039-49df-9202-96385ba3eff8/runs"
             hex_credentials = HexCredentials(token="a1b2c3d4")
             params = dict(limit=100)
-            
+
             response = execute_endpoint(endpoint, hex_credentials, params=params)
             return response.json()
 
