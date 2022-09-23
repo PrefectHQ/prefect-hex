@@ -52,29 +52,18 @@ async def run_project(
     Returns:
         Information about the triggered project run.
     """  # noqa
-    endpoint = "/project/{project_id}/run"  # noqa
-
-    responses = {}
-
-    params = {
-        "project_id": project_id,
-    }
-
-    json_payload = {
-        "input_params": input_params,
-        "dry_run": dry_run,
-        "update_cache": update_cache,
-    }
+    endpoint = f"/project/{project_id}/run"  # noqa
 
     response = await execute_endpoint.fn(
         endpoint,
         hex_credentials,
         http_method=HTTPMethod.POST,
-        params=params,
-        json=json_payload,
+        json=models.RunProjectRequestBody(
+            dryRun=dry_run, inputParams=input_params, updateCache=update_cache
+        ).dict(by_alias=True),
     )
 
-    contents = _unpack_contents(response, responses)
+    contents = _unpack_contents(response)
     return models.ProjectRunResponsePayload.parse_obj(contents)
 
 
@@ -98,23 +87,15 @@ async def get_run_status(
     Returns:
         Information about the requested run.
     """  # noqa
-    endpoint = "/project/{project_id}/run/{run_id}"  # noqa
-
-    responses = {}
-
-    params = {
-        "project_id": project_id,
-        "run_id": run_id,
-    }
+    endpoint = f"/project/{project_id}/run/{run_id}"  # noqa
 
     response = await execute_endpoint.fn(
         endpoint,
         hex_credentials,
         http_method=HTTPMethod.GET,
-        params=params,
     )
 
-    contents = _unpack_contents(response, responses)
+    contents = _unpack_contents(response)
     return models.ProjectStatusResponsePayload.parse_obj(contents)
 
 
@@ -135,24 +116,16 @@ async def cancel_run(
         hex_credentials:
             Credentials to use for authentication with Hex.
     """  # noqa
-    endpoint = "/project/{project_id}/run/{run_id}"  # noqa
-
-    responses = {}
-
-    params = {
-        "project_id": project_id,
-        "run_id": run_id,
-    }
+    endpoint = f"/project/{project_id}/run/{run_id}"  # noqa
 
     response = await execute_endpoint.fn(
         endpoint,
         hex_credentials,
         http_method=HTTPMethod.DELETE,
-        params=params,
     )
 
     # Handles any errors returned by the API
-    _unpack_contents(response, responses)
+    _unpack_contents(response)
 
 
 @task
@@ -162,7 +135,7 @@ async def get_project_runs(
     limit: Optional[models.PageSize] = None,
     offset: Optional[models.Offset] = None,
     status_filter: Optional[models.ProjectRunStatus] = None,
-) -> models.ProjectRunResponsePayload:  # pragma: no cover
+) -> models.ProjectRunsResponsePayload:  # pragma: no cover
     """
     Get the status of the API-triggered runs of a project.
 
@@ -181,15 +154,12 @@ async def get_project_runs(
     Returns:
         Details of all the retrieved runs.
     """  # noqa
-    endpoint = "/project/{project_id}/runs"  # noqa
-
-    responses = {}
+    endpoint = f"/project/{project_id}/runs"  # noqa
 
     params = {
-        "project_id": project_id,
         "limit": limit,
         "offset": offset,
-        "status_filter": status_filter,
+        "statusFilter": status_filter.value if status_filter is not None else None,
     }
 
     response = await execute_endpoint.fn(
@@ -199,5 +169,5 @@ async def get_project_runs(
         params=params,
     )
 
-    contents = _unpack_contents(response, responses)
-    return models.ProjectRunResponsePayload.parse_obj(contents)
+    contents = _unpack_contents(response)
+    return models.ProjectRunsResponsePayload.parse_obj(contents)

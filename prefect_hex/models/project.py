@@ -9,18 +9,20 @@ from enum import Enum
 from typing import Any, Dict, List, Optional
 from uuid import UUID
 
-from pydantic import BaseModel, Extra, Field
+from pydantic import BaseModel, Extra, Field, HttpUrl
 
 
-class NextPageUrl(BaseModel):
-    class Config:
-        extra = Extra.allow
-        allow_mutation = False
+class ProjectRunStatus(Enum):
+    """
+    Current status of a project run.
+    """
 
-    __root__: str = Field(
-        ...,
-        description="URL to fetch the next page of results for a paginated API request",
-    )
+    pending = "PENDING"
+    running = "RUNNING"
+    errored = "ERRORED"
+    completed = "COMPLETED"
+    killed = "KILLED"
+    unabletoallocatekernel = "UNABLE_TO_ALLOCATE_KERNEL"
 
 
 class Offset(BaseModel):
@@ -41,41 +43,6 @@ class PageSize(BaseModel):
         description="Number of results to fetch per page for paginated requests",
         ge=1,
         le=100,
-    )
-
-
-class ProjectId(BaseModel):
-    class Config:
-        extra = Extra.allow
-        allow_mutation = False
-
-    __root__: UUID = Field(
-        ...,
-        description="Unique ID for a Hex project",
-    )
-
-
-class ProjectRunStatus(Enum):
-    """
-    Current status of a project run.
-    """
-
-    pending = "PENDING"
-    running = "RUNNING"
-    errored = "ERRORED"
-    completed = "COMPLETED"
-    killed = "KILLED"
-    unabletoallocatekernel = "UNABLE_TO_ALLOCATE_KERNEL"
-
-
-class RunId(BaseModel):
-    class Config:
-        extra = Extra.allow
-        allow_mutation = False
-
-    __root__: UUID = Field(
-        ...,
-        description="Unique ID for a run of a Hex project",
     )
 
 
@@ -110,50 +77,6 @@ class RunProjectRequestBody(BaseModel):
     )
 
 
-class RunStatusUrl(BaseModel):
-    class Config:
-        extra = Extra.allow
-        allow_mutation = False
-
-    __root__: str = Field(
-        ..., description="URL to query the status of the project run via the Hex API"
-    )
-
-
-class RunUrl(BaseModel):
-    class Config:
-        extra = Extra.allow
-        allow_mutation = False
-
-    __root__: str = Field(
-        ...,
-        description="URL to view the current progress of the project run in the Hex UI",
-    )
-
-
-class TraceId(BaseModel):
-    class Config:
-        extra = Extra.allow
-        allow_mutation = False
-
-    __root__: str = Field(
-        ...,
-        description=(
-            "Hex trace ID to identify an API request. Provide this value to hex support"
-            " with any API issues you encounter"
-        ),
-    )
-
-
-class TsoaErrorResponsePayload(BaseModel):
-    class Config:
-        extra = Extra.allow
-        allow_mutation = False
-
-    reason: str
-    trace_id: TraceId = Field(..., alias="traceId")
-
-
 class ProjectRunResponsePayload(BaseModel):
     """
     Response format returned by the runProject endpoint
@@ -164,11 +87,30 @@ class ProjectRunResponsePayload(BaseModel):
         extra = Extra.forbid
         allow_mutation = False
 
-    project_id: ProjectId = Field(..., alias="projectId")
-    run_id: RunId = Field(..., alias="runId")
-    run_status_url: RunStatusUrl = Field(..., alias="runStatusUrl")
-    run_url: RunUrl = Field(..., alias="runUrl")
-    trace_id: TraceId = Field(..., alias="traceId")
+    project_id: str = Field(
+        ..., alias="projectId", description="Unique ID for a Hex project."
+    )
+    run_id: str = Field(
+        ..., alias="runId", description="Unique ID for a run of a Hex project."
+    )
+    run_status_url: HttpUrl = Field(
+        ...,
+        alias="runStatusUrl",
+        description="URL to query the status of the project run via the Hex API",
+    )
+    run_url: HttpUrl = Field(
+        ...,
+        alias="runUrl",
+        description="URL to view the current progress of the project run in the Hex UI.",
+    )
+    trace_id: str = Field(
+        ...,
+        alias="traceId",
+        description=(
+            "Hex trace ID to identify an API request. Provide this value to hex support"
+            " with any API issues you encounter"
+        ),
+    )
 
 
 class ProjectStatusResponsePayload(BaseModel):
@@ -190,16 +132,31 @@ class ProjectStatusResponsePayload(BaseModel):
         alias="endTime",
         description="UTC timestamp of when the project run finished",
     )
-    project_id: ProjectId = Field(..., alias="projectId")
-    run_id: RunId = Field(..., alias="runId")
-    run_url: RunUrl = Field(..., alias="runUrl")
+    project_id: str = Field(
+        ..., alias="projectId", description="Unique ID for a Hex project."
+    )
+    run_id: str = Field(
+        ..., alias="runId", description="Unique ID for a run of a Hex project."
+    )
+    run_url: HttpUrl = Field(
+        ...,
+        alias="runUrl",
+        description="URL to view the current progress of the project run in the Hex UI",
+    )
     start_time: datetime = Field(
         ...,
         alias="startTime",
         description="UTC timestamp of when the project run started",
     )
     status: ProjectRunStatus
-    trace_id: TraceId = Field(..., alias="traceId")
+    trace_id: str = Field(
+        ...,
+        alias="traceId",
+        description=(
+            "Hex trace ID to identify an API request. Provide this value to hex support"
+            " with any API issues you encounter"
+        ),
+    )
 
 
 class ProjectRunsResponsePayload(BaseModel):
@@ -211,8 +168,16 @@ class ProjectRunsResponsePayload(BaseModel):
         extra = Extra.allow
         allow_mutation = False
 
-    next_page: NextPageUrl = Field(..., alias="nextPage")
-    previous_page: NextPageUrl = Field(..., alias="previousPage")
+    next_page: Optional[HttpUrl] = Field(
+        None,
+        alias="nextPage",
+        description="URL to fetch the next page of results for a paginated API request.",
+    )
+    previous_page: Optional[HttpUrl] = Field(
+        None,
+        alias="previousPage",
+        description="URL to fetch the previous page of results for a paginated API request.",
+    )
     runs: List[ProjectStatusResponsePayload] = Field(
         ...,
         description=(
@@ -220,4 +185,11 @@ class ProjectRunsResponsePayload(BaseModel):
             " `GetRunStatus` endpoint"
         ),
     )
-    trace_id: TraceId = Field(..., alias="traceId")
+    trace_id: str = Field(
+        ...,
+        alias="traceId",
+        description=(
+            "Hex trace ID to identify an API request. Provide this value to hex support"
+            " with any API issues you encounter"
+        ),
+    )
