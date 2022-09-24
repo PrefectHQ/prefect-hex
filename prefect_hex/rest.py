@@ -2,9 +2,6 @@
 This is a module containing generic REST tasks.
 """
 
-# This module was auto-generated using prefect-collection-generator so
-# manually editing this file is not recommended.
-
 import json
 from enum import Enum
 from typing import TYPE_CHECKING, Any, Dict, Union

@@ -1,21 +1,14 @@
 """
-This is a module containing tasks for interacting with:
-Hex project
+This is a module containing tasks for interacting with
+Hex projects
 """
 
-# This module was auto-generated using prefect-collection-generator so
-# manually editing this file is not recommended. If this module
-# is outdated, rerun scripts/generate.py.
-
-# OpenAPI spec: openapi.yaml
-# Updated at: 2022-09-22T23:16:55.466405
-
-from typing import Any, Dict, List, Optional, Union  # noqa
+from typing import Dict, Optional
 
 from prefect import task
 
 from prefect_hex import HexCredentials
-from prefect_hex.models import project as models  # noqa
+from prefect_hex.models import project as models
 from prefect_hex.rest import HTTPMethod, _unpack_contents, execute_endpoint
 
 

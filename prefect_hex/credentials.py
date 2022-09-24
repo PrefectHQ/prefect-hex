@@ -30,7 +30,6 @@ class HexCredentials(Block):
         default="app.hex.tech", description="Domain to make API requests against."
     )
     token: SecretStr = Field(default=..., description="Token used for authentication.")
-    _code_example = ""
 
     def get_client(self) -> AsyncClient:
         """
