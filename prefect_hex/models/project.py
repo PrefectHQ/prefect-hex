@@ -26,7 +26,7 @@ class Offset(BaseModel):
         allow_mutation = False
 
     __root__: int = Field(
-        default=..., description="Offset for paginated requests", ge=0
+        default=..., description="Offset for paginated requests.", ge=0
     )
 
 
@@ -37,7 +37,7 @@ class PageSize(BaseModel):
 
     __root__: int = Field(
         default=...,
-        description="Number of results to fetch per page for paginated requests",
+        description="Number of results to fetch per page for paginated requests.",
         ge=1,
         le=100,
     )
@@ -76,7 +76,7 @@ class RunProjectRequestBody(BaseModel):
 
 class ProjectRunResponsePayload(BaseModel):
     """
-    Response format returned by the runProject endpoint
+    Response format returned by the runProject endpoint.
     """
 
     class Config:
@@ -92,7 +92,7 @@ class ProjectRunResponsePayload(BaseModel):
     run_status_url: HttpUrl = Field(
         default=...,
         alias="runStatusUrl",
-        description="URL to query the status of the project run via the Hex API",
+        description="URL to query the status of the project run via the Hex API.",
     )
     run_url: HttpUrl = Field(
         default=...,
@@ -104,7 +104,7 @@ class ProjectRunResponsePayload(BaseModel):
         alias="traceId",
         description=(
             "Hex trace ID to identify an API request. Provide this value to hex support"
-            " with any API issues you encounter"
+            " with any API issues you encounter."
         ),
     )
 
@@ -121,12 +121,12 @@ class ProjectStatusResponsePayload(BaseModel):
     elapsed_time: float = Field(
         default=...,
         alias="elapsedTime",
-        description="Total elapsed time for the project run in milliseconds",
+        description="Total elapsed time for the project run in milliseconds.",
     )
     end_time: datetime = Field(
         default=...,
         alias="endTime",
-        description="UTC timestamp of when the project run finished",
+        description="UTC timestamp of when the project run finished.",
     )
     project_id: str = Field(
         default=..., alias="projectId", description="Unique ID for a Hex project."
@@ -137,12 +137,12 @@ class ProjectStatusResponsePayload(BaseModel):
     run_url: HttpUrl = Field(
         default=...,
         alias="runUrl",
-        description="URL to view the current progress of the project run in the Hex UI",
+        description="URL to view the current progress of the project run in the Hex UI.",
     )
     start_time: datetime = Field(
         default=...,
         alias="startTime",
-        description="UTC timestamp of when the project run started",
+        description="UTC timestamp of when the project run started.",
     )
     status: ProjectRunStatus
     trace_id: str = Field(
@@ -150,14 +150,14 @@ class ProjectStatusResponsePayload(BaseModel):
         alias="traceId",
         description=(
             "Hex trace ID to identify an API request. Provide this value to hex support"
-            " with any API issues you encounter"
+            " with any API issues you encounter."
         ),
     )
 
 
 class ProjectRunsResponsePayload(BaseModel):
     """
-    Response format returned by the getProjectRuns endpoint
+    Response format returned by the getProjectRuns endpoint.
     """
 
     class Config:
@@ -178,7 +178,7 @@ class ProjectRunsResponsePayload(BaseModel):
         default=...,
         description=(
             "Array of run status payloads in the same format returned by the"
-            " `GetRunStatus` endpoint"
+            " `GetRunStatus` endpoint."
         ),
     )
     trace_id: str = Field(
@@ -186,6 +186,6 @@ class ProjectRunsResponsePayload(BaseModel):
         alias="traceId",
         description=(
             "Hex trace ID to identify an API request. Provide this value to hex support"
-            " with any API issues you encounter"
+            " with any API issues you encounter."
         ),
     )
