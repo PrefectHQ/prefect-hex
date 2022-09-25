@@ -2,12 +2,9 @@
 This is a module containing generic REST tasks.
 """
 
-# This module was auto-generated using prefect-collection-generator so
-# manually editing this file is not recommended.
-
 import json
 from enum import Enum
-from typing import TYPE_CHECKING, Any, Dict, Optional, Union
+from typing import TYPE_CHECKING, Any, Dict, Union
 
 import httpx
 from prefect import task
@@ -103,11 +100,10 @@ async def execute_endpoint(
 
         @flow
         def example_execute_endpoint_flow():
-            project_id = 42
-            domain = "app"
-            endpoint = f"/project/{project_id}/runs"
-            hex_credentials = HexCredentials(domain=domain)
+            endpoint = f"/project/5a8591dd-4039-49df-9202-96385ba3eff8/runs"
+            hex_credentials = HexCredentials(token="a1b2c3d4")
             params = dict(limit=100)
+
             response = execute_endpoint(endpoint, hex_credentials, params=params)
             return response.json()
 
@@ -133,9 +129,7 @@ async def execute_endpoint(
     return response
 
 
-def _unpack_contents(
-    response: httpx.Response, responses: Optional[Dict[int, str]] = None
-) -> Union[Dict[str, Any], bytes]:
+def _unpack_contents(response: httpx.Response) -> Union[Dict[str, Any], bytes]:
     """
     Helper method to unpack the contents from the httpx.Response,
     reporting errors in a helpful manner, if any.
@@ -143,17 +137,9 @@ def _unpack_contents(
     try:
         response.raise_for_status()
     except httpx.HTTPStatusError as exc:
-        helpful_error_response = (responses or {}).get(response.status_code, "")
-        try:
-            helpful_error_response += f"JSON response: {response.json()}"
-        except Exception:
-            pass
-        if helpful_error_response:
-            raise httpx.HTTPStatusError(
-                helpful_error_response, request=exc.request, response=exc.response
-            ) from exc
-        else:
-            raise
+        raise httpx.HTTPStatusError(
+            response.json(), request=exc.request, response=exc.response
+        ) from exc
 
     try:
         return response.json()

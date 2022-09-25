@@ -1,7 +1,5 @@
 """Credential classes used to perform authenticated interactions with Hex"""
 
-from typing import Any, Dict, Optional
-
 from httpx import AsyncClient
 from prefect.blocks.core import Block
 from pydantic import Field, SecretStr
@@ -12,8 +10,7 @@ class HexCredentials(Block):
     Block used to manage Hex authentication.
 
     Attributes:
-        domain:
-            Domain used in formatting the endpoint URL.
+        domain: Domain to make API requests against.
         token: The token to authenticate with Hex.
 
 
@@ -21,6 +18,7 @@ class HexCredentials(Block):
         Load stored Hex credentials:
         ```python
         from prefect_hex import HexCredentials
+
         hex_credentials_block = HexCredentials.load("BLOCK_NAME")
         ```
     """
@@ -28,16 +26,17 @@ class HexCredentials(Block):
     _block_type_name = "Hex Credentials"
     _logo_url = "https://images.ctfassets.net/gm98wzqotmnx/3biMverMLGiDA7y5fkqKZF/4b7747052b59fa8182a9686b88ea9541/Hex_Purple__for_light_backgrounds_.png?h=250"  # noqa
 
-    domain: str = Field(default=..., description="Used in formatting the base URL.")
+    domain: str = Field(
+        default="app.hex.tech", description="Domain to make API requests against."
+    )
     token: SecretStr = Field(default=..., description="Token used for authentication.")
-    client_kwargs: Optional[Dict[str, Any]] = None
 
     def get_client(self) -> AsyncClient:
         """
-        Gets an Hex REST AsyncClient.
+        Gets a Hex REST AsyncClient.
 
         Returns:
-            An Hex REST AsyncClient.
+            A Hex REST AsyncClient.
 
         Example:
             Gets a Hex REST AsyncClient.
@@ -55,11 +54,9 @@ class HexCredentials(Block):
             example_get_client_flow()
             ```
         """
-        base_url = f"https://{self.domain}/api/v1"
-
-        client_kwargs = self.client_kwargs or {}
-        client_kwargs["headers"] = {
-            "Authorization": f"Bearer {self.token.get_secret_value()}"
+        client_kwargs = {
+            "base_url": f"https://{self.domain}/api/v1",
+            "headers": {"Authorization": f"Bearer {self.token.get_secret_value()}"},
         }
-        client = AsyncClient(base_url=base_url, **client_kwargs)
+        client = AsyncClient(**client_kwargs)
         return client

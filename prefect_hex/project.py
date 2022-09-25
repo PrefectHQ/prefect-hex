@@ -1,38 +1,31 @@
 """
-This is a module containing tasks for interacting with:
-Hex project
+This is a module containing tasks for interacting with
+Hex projects
 """
 
-# This module was auto-generated using prefect-collection-generator so
-# manually editing this file is not recommended. If this module
-# is outdated, rerun scripts/generate.py.
-
-# OpenAPI spec: openapi.yaml
-# Updated at: 2022-09-22T23:16:55.466405
-
-from typing import Any, Dict, List, Union  # noqa
+from typing import Dict, Optional
 
 from prefect import task
 
 from prefect_hex import HexCredentials
-from prefect_hex.models import project as models  # noqa
+from prefect_hex.models import project as models
 from prefect_hex.rest import HTTPMethod, _unpack_contents, execute_endpoint
 
 
 @task
 async def run_project(
     project_id: str,
-    hex_credentials: "HexCredentials",
-    input_params: Dict = None,
+    hex_credentials: HexCredentials,
+    input_params: Optional[Dict] = None,
     dry_run: bool = False,
     update_cache: bool = False,
-) -> Dict[str, Any]:  # pragma: no cover
+) -> models.ProjectRunResponsePayload:  # pragma: no cover
     """
     Trigger a run of the latest published version of a project.
 
     Args:
         project_id:
-            Project id used in formatting the endpoint URL.
+            Project ID to run.
         hex_credentials:
             Credentials to use for authentication with Hex.
         input_params:
@@ -50,149 +43,98 @@ async def run_project(
             input parameters are provided.
 
     Returns:
-        Upon success, a dict of the response. </br>- `project_id: "models.ProjectId"`</br>- `run_id: "models.RunId"`</br>- `run_url: "models.RunUrl"`</br>- `run_status_url: "models.RunStatusUrl"`</br>- `trace_id: "models.TraceId"`</br>
-
-    <h4>API Endpoint:</h4>
-    `/project/{project_id}/run`
-
-    <h4>API Responses:</h4>
-    | Response | Description |
-    | --- | --- |
+        Information about the triggered project run.
     """  # noqa
-    endpoint = "/project/{project_id}/run"  # noqa
-
-    responses = {}
-
-    params = {
-        "project_id": project_id,
-    }
-
-    json_payload = {
-        "input_params": input_params,
-        "dry_run": dry_run,
-        "update_cache": update_cache,
-    }
+    endpoint = f"/project/{project_id}/run"  # noqa
 
     response = await execute_endpoint.fn(
         endpoint,
         hex_credentials,
         http_method=HTTPMethod.POST,
-        params=params,
-        json=json_payload,
+        json=models.RunProjectRequestBody(
+            dryRun=dry_run, inputParams=input_params, updateCache=update_cache
+        ).dict(by_alias=True),
     )
 
-    contents = _unpack_contents(response, responses)
-    return contents
+    contents = _unpack_contents(response)
+    return models.ProjectRunResponsePayload.parse_obj(contents)
 
 
 @task
 async def get_run_status(
     project_id: str,
     run_id: str,
-    hex_credentials: "HexCredentials",
-) -> Dict[str, Any]:  # pragma: no cover
+    hex_credentials: HexCredentials,
+) -> models.ProjectStatusResponsePayload:  # pragma: no cover
     """
     Get the status of a project run.
 
     Args:
         project_id:
-            Project id used in formatting the endpoint URL.
+            Project ID associated with the run to get the status of.
         run_id:
-            Run id used in formatting the endpoint URL.
+            Run ID of the run to get the status of.
         hex_credentials:
             Credentials to use for authentication with Hex.
 
     Returns:
-        Upon success, a dict of the response. </br>- `project_id: "models.ProjectId"`</br>- `run_id: "models.RunId"`</br>- `run_url: "models.RunUrl"`</br>- `status: "models.ProjectRunStatus"`</br>- `start_time: str`</br>- `end_time: str`</br>- `elapsed_time: str`</br>- `trace_id: "models.TraceId"`</br>
-
-    <h4>API Endpoint:</h4>
-    `/project/{project_id}/run/{run_id}`
-
-    <h4>API Responses:</h4>
-    | Response | Description |
-    | --- | --- |
+        Information about the requested run.
     """  # noqa
-    endpoint = "/project/{project_id}/run/{run_id}"  # noqa
-
-    responses = {}
-
-    params = {
-        "project_id": project_id,
-        "run_id": run_id,
-    }
+    endpoint = f"/project/{project_id}/run/{run_id}"  # noqa
 
     response = await execute_endpoint.fn(
         endpoint,
         hex_credentials,
         http_method=HTTPMethod.GET,
-        params=params,
     )
 
-    contents = _unpack_contents(response, responses)
-    return contents
+    contents = _unpack_contents(response)
+    return models.ProjectStatusResponsePayload.parse_obj(contents)
 
 
 @task
 async def cancel_run(
     project_id: str,
     run_id: str,
-    hex_credentials: "HexCredentials",
-) -> Dict[str, Any]:  # pragma: no cover
+    hex_credentials: HexCredentials,
+) -> None:  # pragma: no cover
     """
     Cancel a project run.
 
     Args:
         project_id:
-            Project id used in formatting the endpoint URL.
+            Project ID associated with the run to cancel.
         run_id:
-            Run id used in formatting the endpoint URL.
+            Run ID of the run to cancel.
         hex_credentials:
             Credentials to use for authentication with Hex.
-
-    Returns:
-        Upon success, an empty dict.
-
-    <h4>API Endpoint:</h4>
-    `/project/{project_id}/run/{run_id}`
-
-    <h4>API Responses:</h4>
-    | Response | Description |
-    | --- | --- |
     """  # noqa
-    endpoint = "/project/{project_id}/run/{run_id}"  # noqa
-
-    responses = {}
-
-    params = {
-        "project_id": project_id,
-        "run_id": run_id,
-    }
+    endpoint = f"/project/{project_id}/run/{run_id}"  # noqa
 
     response = await execute_endpoint.fn(
         endpoint,
         hex_credentials,
         http_method=HTTPMethod.DELETE,
-        params=params,
     )
 
-    contents = _unpack_contents(response, responses)
-    return contents
+    # Handles any errors returned by the API
+    _unpack_contents(response)
 
 
 @task
 async def get_project_runs(
     project_id: str,
-    hex_credentials: "HexCredentials",
-    limit: "models.PageSize" = None,
-    offset: "models.Offset" = None,
-    status_filter: "models.ProjectRunStatus" = None,
-) -> Dict[str, Any]:  # pragma: no cover
+    hex_credentials: HexCredentials,
+    limit: Optional[models.PageSize] = None,
+    offset: Optional[models.Offset] = None,
+    status_filter: Optional[models.ProjectRunStatus] = None,
+) -> models.ProjectRunsResponsePayload:  # pragma: no cover
     """
     Get the status of the API-triggered runs of a project.
 
     Args:
         project_id:
-            Project id used in formatting the endpoint URL.
+            Project ID to get runs for.
         hex_credentials:
             Credentials to use for authentication with Hex.
         limit:
@@ -203,24 +145,14 @@ async def get_project_runs(
             Current status of a project run.
 
     Returns:
-        Upon success, a dict of the response. </br>- `runs: List["models.ProjectStatusResponsePayload"]`</br>- `next_page: str`</br>- `previous_page: str`</br>- `trace_id: "models.TraceId"`</br>
-
-    <h4>API Endpoint:</h4>
-    `/project/{project_id}/runs`
-
-    <h4>API Responses:</h4>
-    | Response | Description |
-    | --- | --- |
+        Details of all the retrieved runs.
     """  # noqa
-    endpoint = "/project/{project_id}/runs"  # noqa
-
-    responses = {}
+    endpoint = f"/project/{project_id}/runs"  # noqa
 
     params = {
-        "project_id": project_id,
         "limit": limit,
         "offset": offset,
-        "status_filter": status_filter,
+        "statusFilter": status_filter.value if status_filter is not None else None,
     }
 
     response = await execute_endpoint.fn(
@@ -230,5 +162,5 @@ async def get_project_runs(
         params=params,
     )
 
-    contents = _unpack_contents(response, responses)
-    return contents
+    contents = _unpack_contents(response)
+    return models.ProjectRunsResponsePayload.parse_obj(contents)
