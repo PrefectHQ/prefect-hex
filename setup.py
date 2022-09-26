@@ -29,7 +29,7 @@ setup(
     extras_require={"dev": dev_requires},
     entry_points={
         "prefect.collections": [
-            "HexCredentials = prefect_hex.credentials",
+            "prefect_hex = prefect_hex",
         ]
     },
     classifiers=[
