@@ -21,8 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.1.0
 
-Released on ????? ?th, 20??.
+Released on September 26th, 2022.
 
 ### Added
 
-- `task_name` task - [#1](https://github.com/PrefectHQ/prefect-hex/pull/1)
+- `run_project`, `get_run_status`, `cancel_run`, and `get_project_runs` tasks - [#2](https://github.com/PrefectHQ/prefect-hex/pull/2)
