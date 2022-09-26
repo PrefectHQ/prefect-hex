@@ -32,7 +32,9 @@ REPO_DIRECTORY = THIS_DIRECTORY.parent
 
 # UPDATE THESE AS DESIRED
 service_name = "Hex"
-paths_or_urls = []  # At least one path or url must be specified!
+paths_or_urls = [
+    "https://static.hex.site/openapi.json"
+]  # At least one path or url must be specified!
 routes = None
 overwrite = True
 
@@ -52,4 +54,7 @@ populate_collection_repo(
     overwrite=overwrite,
     preprocess_fn=preprocess_fn,
     repo_directory=REPO_DIRECTORY,
+    base_url="https://{domain}/api/v1",
+    group_models_by_module=False,
+    regenerate_module_files=False,
 )

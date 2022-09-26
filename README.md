@@ -18,11 +18,13 @@
 
 ## Welcome!
 
-Prefect integrations for interacting with Hex.
+Prefect integrations for interacting with Hex. 
 
-The tasks within this collection were created by a code generator using the service's OpenAPI spec.
+Hex is a powerful platform for collaborative data science and analytics. For information getting started with Hex, check out Hex's [quickstart guide](https://learn.hex.tech/quickstart).
 
-The service's REST API documentation can be found [here](replace_this_with_link_to_api_docs).
+The tasks within this collection were created by a code generator using Hex's OpenAPI spec.
+
+Hex's REST API documentation can be found [here](https://learn.hex.tech/docs/develop-logic/hex-api/api-reference).
 
 ## Getting Started
 
@@ -46,18 +48,20 @@ pip install prefect-hex
 
 ```python
 from prefect import flow
-from prefect_hex.tasks import (
-    goodbye_prefect_hex,
-    hello_prefect_hex,
-)
+from prefect_hex import HexCredentials
 
+from prefect_hex.project import get_project_runs
 
 @flow
-def example_flow():
-    hello_prefect_hex
-    goodbye_prefect_hex
+def get_project_runs_flow():
+    hex_credentials = HexCredentials(token="a1b2c3d4")
+    project_runs = get_project_runs(
+        project_id='5a8591dd-4039-49df-9202-96385ba3eff8',
+        hex_credentials=hex_credentials
+    )
+    return project_runs
 
-example_flow()
+get_project_runs_flow()
 ```
 
 ## Resources
