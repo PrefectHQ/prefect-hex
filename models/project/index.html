@@ -1,0 +1,1953 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://PrefectHQ.github.io/prefect-hex/models/project/">
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>Project - prefect-hex</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prefect_hex.models.project" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="prefect-hex" class="md-header__button md-logo" aria-label="prefect-hex" data-md-component="logo">
+      
+  <img src="../../img/prefect-logo-mark-solid-white-500.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            prefect-hex
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Project
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/PrefectHQ/prefect-hex" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="prefect-hex" class="md-nav__button md-logo" aria-label="prefect-hex" data-md-component="logo">
+      
+  <img src="../../img/prefect-logo-mark-solid-white-500.png" alt="logo">
+
+    </a>
+    prefect-hex
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/PrefectHQ/prefect-hex" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../credentials/" class="md-nav__link">
+        Credentials
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest/" class="md-nav__link">
+        Rest
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/" class="md-nav__link">
+        Project
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Models" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Models
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Project
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.Offset" class="md-nav__link">
+    Offset
+  </a>
+  
+    <nav class="md-nav" aria-label="Offset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.Offset.__root__" class="md-nav__link">
+    __root__
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.PageSize" class="md-nav__link">
+    PageSize
+  </a>
+  
+    <nav class="md-nav" aria-label="PageSize">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.PageSize.__root__" class="md-nav__link">
+    __root__
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunResponsePayload" class="md-nav__link">
+    ProjectRunResponsePayload
+  </a>
+  
+    <nav class="md-nav" aria-label="ProjectRunResponsePayload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunResponsePayload.project_id" class="md-nav__link">
+    project_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunResponsePayload.run_id" class="md-nav__link">
+    run_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunResponsePayload.run_status_url" class="md-nav__link">
+    run_status_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunResponsePayload.run_url" class="md-nav__link">
+    run_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunResponsePayload.trace_id" class="md-nav__link">
+    trace_id
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunStatus" class="md-nav__link">
+    ProjectRunStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunsResponsePayload" class="md-nav__link">
+    ProjectRunsResponsePayload
+  </a>
+  
+    <nav class="md-nav" aria-label="ProjectRunsResponsePayload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunsResponsePayload.next_page" class="md-nav__link">
+    next_page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunsResponsePayload.previous_page" class="md-nav__link">
+    previous_page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunsResponsePayload.runs" class="md-nav__link">
+    runs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunsResponsePayload.trace_id" class="md-nav__link">
+    trace_id
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload" class="md-nav__link">
+    ProjectStatusResponsePayload
+  </a>
+  
+    <nav class="md-nav" aria-label="ProjectStatusResponsePayload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload.elapsed_time" class="md-nav__link">
+    elapsed_time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload.end_time" class="md-nav__link">
+    end_time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload.project_id" class="md-nav__link">
+    project_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload.run_id" class="md-nav__link">
+    run_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload.run_url" class="md-nav__link">
+    run_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload.start_time" class="md-nav__link">
+    start_time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload.trace_id" class="md-nav__link">
+    trace_id
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.RunProjectRequestBody" class="md-nav__link">
+    RunProjectRequestBody
+  </a>
+  
+    <nav class="md-nav" aria-label="RunProjectRequestBody">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.RunProjectRequestBody.dry_run" class="md-nav__link">
+    dry_run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.RunProjectRequestBody.input_params" class="md-nav__link">
+    input_params
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.RunProjectRequestBody.update_cache" class="md-nav__link">
+    update_cache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.Offset" class="md-nav__link">
+    Offset
+  </a>
+  
+    <nav class="md-nav" aria-label="Offset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.Offset.__root__" class="md-nav__link">
+    __root__
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.PageSize" class="md-nav__link">
+    PageSize
+  </a>
+  
+    <nav class="md-nav" aria-label="PageSize">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.PageSize.__root__" class="md-nav__link">
+    __root__
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunResponsePayload" class="md-nav__link">
+    ProjectRunResponsePayload
+  </a>
+  
+    <nav class="md-nav" aria-label="ProjectRunResponsePayload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunResponsePayload.project_id" class="md-nav__link">
+    project_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunResponsePayload.run_id" class="md-nav__link">
+    run_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunResponsePayload.run_status_url" class="md-nav__link">
+    run_status_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunResponsePayload.run_url" class="md-nav__link">
+    run_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunResponsePayload.trace_id" class="md-nav__link">
+    trace_id
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunStatus" class="md-nav__link">
+    ProjectRunStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunsResponsePayload" class="md-nav__link">
+    ProjectRunsResponsePayload
+  </a>
+  
+    <nav class="md-nav" aria-label="ProjectRunsResponsePayload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunsResponsePayload.next_page" class="md-nav__link">
+    next_page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunsResponsePayload.previous_page" class="md-nav__link">
+    previous_page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunsResponsePayload.runs" class="md-nav__link">
+    runs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectRunsResponsePayload.trace_id" class="md-nav__link">
+    trace_id
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload" class="md-nav__link">
+    ProjectStatusResponsePayload
+  </a>
+  
+    <nav class="md-nav" aria-label="ProjectStatusResponsePayload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload.elapsed_time" class="md-nav__link">
+    elapsed_time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload.end_time" class="md-nav__link">
+    end_time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload.project_id" class="md-nav__link">
+    project_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload.run_id" class="md-nav__link">
+    run_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload.run_url" class="md-nav__link">
+    run_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload.start_time" class="md-nav__link">
+    start_time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.ProjectStatusResponsePayload.trace_id" class="md-nav__link">
+    trace_id
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.RunProjectRequestBody" class="md-nav__link">
+    RunProjectRequestBody
+  </a>
+  
+    <nav class="md-nav" aria-label="RunProjectRequestBody">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.RunProjectRequestBody.dry_run" class="md-nav__link">
+    dry_run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.RunProjectRequestBody.input_params" class="md-nav__link">
+    input_params
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefect_hex.models.project.RunProjectRequestBody.update_cache" class="md-nav__link">
+    update_cache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/PrefectHQ/prefect-hex/edit/main/docs/models/project.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h1 id="prefect_hex.models.project" class="doc doc-heading">
+        <code>prefect_hex.models.project</code>
+
+
+
+</h1>
+
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 id="prefect_hex.models.project.Offset" class="doc doc-heading">
+        <code>
+Offset        </code>
+
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
+  </span>
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>prefect_hex/models/project.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Offset</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="n">Extra</span><span class="o">.</span><span class="n">allow</span>
+        <span class="n">allow_mutation</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">__root__</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Offset for paginated requests.&quot;</span><span class="p">,</span> <span class="n">ge</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+</code></pre></div>
+        </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.Offset.__root__" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">__root__</span><span class="p">:</span> <span class="n">ConstrainedIntValue</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Offset for paginated requests.</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 id="prefect_hex.models.project.PageSize" class="doc doc-heading">
+        <code>
+PageSize        </code>
+
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
+  </span>
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>prefect_hex/models/project.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">PageSize</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="n">Extra</span><span class="o">.</span><span class="n">allow</span>
+        <span class="n">allow_mutation</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">__root__</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Number of results to fetch per page for paginated requests.&quot;</span><span class="p">,</span>
+        <span class="n">ge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">le</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+        </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.PageSize.__root__" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">__root__</span><span class="p">:</span> <span class="n">ConstrainedIntValue</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Number of results to fetch per page for paginated requests.</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 id="prefect_hex.models.project.ProjectRunResponsePayload" class="doc doc-heading">
+        <code>
+ProjectRunResponsePayload        </code>
+
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
+  </span>
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Response format returned by the runProject endpoint.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>prefect_hex/models/project.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ProjectRunResponsePayload</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Response format returned by the runProject endpoint.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="n">Extra</span><span class="o">.</span><span class="n">allow</span>
+        <span class="n">allow_mutation</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">project_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;projectId&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Unique ID for a Hex project.&quot;</span>
+    <span class="p">)</span>
+    <span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;runId&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Unique ID for a run of a Hex project.&quot;</span>
+    <span class="p">)</span>
+    <span class="n">run_status_url</span><span class="p">:</span> <span class="n">HttpUrl</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;runStatusUrl&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;URL to query the status of the project run via the Hex API.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">run_url</span><span class="p">:</span> <span class="n">HttpUrl</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;runUrl&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;URL to view the current progress of the project run in the Hex UI.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">trace_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;traceId&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+            <span class="s2">&quot;Hex trace ID to identify an API request. Provide this value to hex support&quot;</span>
+            <span class="s2">&quot; with any API issues you encounter.&quot;</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+</code></pre></div>
+        </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectRunResponsePayload.project_id" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">project_id</span><span class="p">:</span> <span class="nb">str</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Unique ID for a Hex project.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectRunResponsePayload.run_id" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Unique ID for a run of a Hex project.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectRunResponsePayload.run_status_url" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">run_status_url</span><span class="p">:</span> <span class="n">HttpUrl</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>URL to query the status of the project run via the Hex API.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectRunResponsePayload.run_url" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">run_url</span><span class="p">:</span> <span class="n">HttpUrl</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>URL to view the current progress of the project run in the Hex UI.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectRunResponsePayload.trace_id" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">trace_id</span><span class="p">:</span> <span class="nb">str</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Hex trace ID to identify an API request. Provide this value to hex support with any API issues you encounter.</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 id="prefect_hex.models.project.ProjectRunStatus" class="doc doc-heading">
+        <code>
+ProjectRunStatus        </code>
+
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Current status of a project run.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>prefect_hex/models/project.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ProjectRunStatus</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Current status of a project run.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">pending</span> <span class="o">=</span> <span class="s2">&quot;PENDING&quot;</span>
+    <span class="n">running</span> <span class="o">=</span> <span class="s2">&quot;RUNNING&quot;</span>
+    <span class="n">errored</span> <span class="o">=</span> <span class="s2">&quot;ERRORED&quot;</span>
+    <span class="n">completed</span> <span class="o">=</span> <span class="s2">&quot;COMPLETED&quot;</span>
+    <span class="n">killed</span> <span class="o">=</span> <span class="s2">&quot;KILLED&quot;</span>
+    <span class="n">unabletoallocatekernel</span> <span class="o">=</span> <span class="s2">&quot;UNABLE_TO_ALLOCATE_KERNEL&quot;</span>
+</code></pre></div>
+        </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 id="prefect_hex.models.project.ProjectRunsResponsePayload" class="doc doc-heading">
+        <code>
+ProjectRunsResponsePayload        </code>
+
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
+  </span>
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Response format returned by the getProjectRuns endpoint.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>prefect_hex/models/project.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ProjectRunsResponsePayload</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Response format returned by the getProjectRuns endpoint.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="n">Extra</span><span class="o">.</span><span class="n">allow</span>
+        <span class="n">allow_mutation</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">next_page</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">HttpUrl</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;nextPage&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;URL to fetch the next page of results for a paginated API request.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">previous_page</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">HttpUrl</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;previousPage&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;URL to fetch the previous page of results for a paginated API request.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">runs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ProjectStatusResponsePayload</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+            <span class="s2">&quot;Array of run status payloads in the same format returned by the&quot;</span>
+            <span class="s2">&quot; `GetRunStatus` endpoint.&quot;</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">trace_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;traceId&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+            <span class="s2">&quot;Hex trace ID to identify an API request. Provide this value to hex support&quot;</span>
+            <span class="s2">&quot; with any API issues you encounter.&quot;</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+</code></pre></div>
+        </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectRunsResponsePayload.next_page" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">next_page</span><span class="p">:</span> <span class="n">HttpUrl</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>URL to fetch the next page of results for a paginated API request.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectRunsResponsePayload.previous_page" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">previous_page</span><span class="p">:</span> <span class="n">HttpUrl</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>URL to fetch the previous page of results for a paginated API request.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectRunsResponsePayload.runs" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">runs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">prefect_hex</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">ProjectStatusResponsePayload</span><span class="p">]</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Array of run status payloads in the same format returned by the <code>GetRunStatus</code> endpoint.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectRunsResponsePayload.trace_id" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">trace_id</span><span class="p">:</span> <span class="nb">str</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Hex trace ID to identify an API request. Provide this value to hex support with any API issues you encounter.</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 id="prefect_hex.models.project.ProjectStatusResponsePayload" class="doc doc-heading">
+        <code>
+ProjectStatusResponsePayload        </code>
+
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
+  </span>
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Response format returned by the getRunStatus endpoint</p>
+
+        <details class="quote">
+          <summary>Source code in <code>prefect_hex/models/project.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ProjectStatusResponsePayload</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Response format returned by the getRunStatus endpoint</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="n">Extra</span><span class="o">.</span><span class="n">allow</span>
+        <span class="n">allow_mutation</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">elapsed_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;elapsedTime&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Total elapsed time for the project run in milliseconds.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">end_time</span><span class="p">:</span> <span class="n">datetime</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;endTime&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;UTC timestamp of when the project run finished.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">project_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;projectId&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Unique ID for a Hex project.&quot;</span>
+    <span class="p">)</span>
+    <span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;runId&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Unique ID for a run of a Hex project.&quot;</span>
+    <span class="p">)</span>
+    <span class="n">run_url</span><span class="p">:</span> <span class="n">HttpUrl</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;runUrl&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;URL to view the current progress of the project run in the Hex UI.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">start_time</span><span class="p">:</span> <span class="n">datetime</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;startTime&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;UTC timestamp of when the project run started.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">status</span><span class="p">:</span> <span class="n">ProjectRunStatus</span>
+    <span class="n">trace_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=...</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;traceId&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+            <span class="s2">&quot;Hex trace ID to identify an API request. Provide this value to hex support&quot;</span>
+            <span class="s2">&quot; with any API issues you encounter.&quot;</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+</code></pre></div>
+        </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectStatusResponsePayload.elapsed_time" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">elapsed_time</span><span class="p">:</span> <span class="nb">float</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Total elapsed time for the project run in milliseconds.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectStatusResponsePayload.end_time" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">end_time</span><span class="p">:</span> <span class="n">datetime</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>UTC timestamp of when the project run finished.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectStatusResponsePayload.project_id" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">project_id</span><span class="p">:</span> <span class="nb">str</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Unique ID for a Hex project.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectStatusResponsePayload.run_id" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Unique ID for a run of a Hex project.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectStatusResponsePayload.run_url" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">run_url</span><span class="p">:</span> <span class="n">HttpUrl</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>URL to view the current progress of the project run in the Hex UI.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectStatusResponsePayload.start_time" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">start_time</span><span class="p">:</span> <span class="n">datetime</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>UTC timestamp of when the project run started.</p>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.ProjectStatusResponsePayload.trace_id" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">trace_id</span><span class="p">:</span> <span class="nb">str</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+      <small class="doc doc-property doc-property-required"><code>required</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Hex trace ID to identify an API request. Provide this value to hex support with any API issues you encounter.</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 id="prefect_hex.models.project.RunProjectRequestBody" class="doc doc-heading">
+        <code>
+RunProjectRequestBody        </code>
+
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
+  </span>
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>prefect_hex/models/project.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">RunProjectRequestBody</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="n">Extra</span><span class="o">.</span><span class="n">allow</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="n">Extra</span><span class="o">.</span><span class="n">forbid</span>
+        <span class="n">allow_mutation</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">dry_run</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="s2">&quot;false&quot;</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;dryRun&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+            <span class="s2">&quot;If specified, perform a dry run without actually executing the project.&quot;</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">input_params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;inputParams&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Optional input parameter value map for this project run.&quot;</span><span class="p">,</span>
+        <span class="n">example</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;numeric_input_1&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span> <span class="s2">&quot;text_input_1&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">update_cache</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="s2">&quot;false&quot;</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;updateCache&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+            <span class="s2">&quot;When true, this run will update the cached state of the published app with&quot;</span>
+            <span class="s2">&quot; the latest run results.</span><span class="se">\n</span><span class="s2">Additionally, any SQL cells that have caching&quot;</span>
+            <span class="s2">&quot; enabled will be re-executed as part of this run. Note</span><span class="se">\n</span><span class="s2">that this cannot&quot;</span>
+            <span class="s2">&quot; be set to true if custom input parameters are provided.&quot;</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+</code></pre></div>
+        </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.RunProjectRequestBody.dry_run" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">dry_run</span><span class="p">:</span> <span class="nb">bool</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>If specified, perform a dry run without actually executing the project.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.RunProjectRequestBody.input_params" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">input_params</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Optional input parameter value map for this project run.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="prefect_hex.models.project.RunProjectRequestBody.update_cache" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">update_cache</span><span class="p">:</span> <span class="nb">bool</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>When true, this run will update the cached state of the published app with the latest run results.
+Additionally, any SQL cells that have caching enabled will be re-executed as part of this run. Note
+that this cannot be set to true if custom input parameters are provided.</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../project/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Project" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Project
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+    
+  </body>
+</html>
