@@ -46,7 +46,7 @@ pip install prefect-hex
 
 ### Gather and store authentication
 
-1. Create new token on app.hex.tech Settings page:
+1. Create new token on https://app.hex.tech/ Settings page:
 
 ![image](https://user-images.githubusercontent.com/15331990/201996947-07765380-50c4-4c61-9044-bd93e4b8efc7.png)
 
