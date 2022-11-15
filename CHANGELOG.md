@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Make `end_time` an optional field in `ProjectStatusResponsePayload`.
+- Make `end_time` an optional field in `ProjectStatusResponsePayload` - [#14](https://github.com/PrefectHQ/prefect-hex/pull/14)
 
 ### Security
 
