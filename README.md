@@ -56,7 +56,7 @@ pip install prefect-hex
 
 3. Copy project ID from browser URL:
 
-![image](https://user-images.githubusercontent.com/15331990/201998085-4c2c43ba-f180-41ec-a322-07be268021de.png)
+![image](https://user-images.githubusercontent.com/15331990/202002588-55a895b2-de89-438f-ac96-c86940946336.png)
 
 ### Write and run a flow
 
