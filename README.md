@@ -54,7 +54,7 @@ pip install prefect-hex
 
 ![image](https://user-images.githubusercontent.com/15331990/201997292-b3a18254-229f-4689-aaec-07a990cdaf87.png)
 
-3. Copy project ID from browser URL:
+3. Copy project ID from browser URL (in red):
 
 ![image](https://user-images.githubusercontent.com/15331990/202002588-55a895b2-de89-438f-ac96-c86940946336.png)
 
