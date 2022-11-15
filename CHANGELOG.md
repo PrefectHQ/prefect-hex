@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Make `end_time` an optional field in `ProjectStatusResponsePayload`.
+
 ### Security
 
 ## 0.1.0
