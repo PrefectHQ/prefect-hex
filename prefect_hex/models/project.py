@@ -124,7 +124,7 @@ class ProjectStatusResponsePayload(BaseModel):
         description="Total elapsed time for the project run in milliseconds.",
     )
     end_time: datetime = Field(
-        default=...,
+        default=None,
         alias="endTime",
         description="UTC timestamp of when the project run finished.",
     )
