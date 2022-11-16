@@ -276,7 +276,7 @@ async def trigger_project_run_and_wait_for_completion(
         return project_metadata
     else:
         raise TERMINAL_STATUS_EXCEPTIONS.get(project_status, HexProjectRunError)(
-            f"Sync ({project_metadata.slug!r}, ID {project_id!r}) "
+            f"Project {project_id!r} run {run_id!r} "
             f"was unsuccessful with {project_status.value!r} status"
         )
 
