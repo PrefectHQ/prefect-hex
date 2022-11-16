@@ -1,8 +1,6 @@
 import pytest
 from prefect.testing.utilities import prefect_test_harness
 
-from prefect_hex import HexCredentials
-
 
 @pytest.fixture(scope="session", autouse=True)
 def prefect_db():
