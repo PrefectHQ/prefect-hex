@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Added `trigger_project_run_and_wait_for_completion_flow` flow - [#15](https://github.com/PrefectHQ/prefect-hex/pull/15)
+
 ### Changed
 
 ### Deprecated
