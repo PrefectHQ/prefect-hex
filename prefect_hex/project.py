@@ -209,7 +209,7 @@ async def trigger_project_run_and_wait_for_completion(
         Information about the triggered project run.
 
     Examples:
-        Trigger a Hex project run and wait for completion as a stand alone flow.
+        Trigger a Hex project run and wait for completion as a stand-alone flow.
         ```python
         import asyncio
         from prefect_hex import HexCredentials
@@ -234,16 +234,17 @@ async def trigger_project_run_and_wait_for_completion(
         from prefect_hex.project import trigger_project_run_and_wait_for_completion
 
         @flow
-        def trigger_project_run_and_wait_for_completion_flow():
-            project_id = "012345c6-b67c-1234-1b2c-66e4ad07b9f3"
+        def trigger_project_run_and_wait_for_completion_flow(project_id: str):
             hex_credentials = HexCredentials.load("hex-token")
-            project_status = trigger_project_run_and_wait_for_completion(
+            project_metadata = trigger_project_run_and_wait_for_completion(
                 project_id=project_id,
                 hex_credentials=hex_credentials
             )
-            return project_status
+            return project_metadata
 
-        trigger_project_run_and_wait_for_completion_flow()
+        trigger_project_run_and_wait_for_completion_flow(
+            project_id="012345c6-b67c-1234-1b2c-66e4ad07b9f3"
+        )
         ```
     """
     logger = get_run_logger()
@@ -308,7 +309,27 @@ async def wait_for_project_run_completion(
         The status of the project run and the metadata associated with the run.
 
     Examples:
-        ...
+        Wait for completion of a project run as a subflow.
+        ```python
+        from prefect import flow
+        from prefect_hex import HexCredentials
+        from prefect_hex.project import wait_for_project_run_completion
+
+        @flow
+        def wait_for_project_run_completion_flow(project_id: str, run_id: str):
+            hex_credentials = HexCredentials.load("hex-token")
+            project_status, project_metadata = wait_for_project_run_completion(
+                project_id=project_id,
+                run_id=run_id,
+                hex_credentials=hex_credentials
+            )
+            return project_status, project_metadata
+
+        wait_for_project_run_completion_flow(
+            project_id="012345c6-b67c-1234-1b2c-66e4ad07b9f3",
+            run_id="654321c6-b67c-1234-1b2c-66e4ad07b9f3",
+        )
+        ```
     """
     logger = get_run_logger()
     seconds_waited_for_run_completion = 0
