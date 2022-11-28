@@ -44,6 +44,20 @@ Install `prefect-hex` with `pip`:
 pip install prefect-hex
 ```
 
+### Gather and store authentication
+
+1. Create new token on https://app.hex.tech/ Settings page:
+
+![image](https://user-images.githubusercontent.com/15331990/201996947-07765380-50c4-4c61-9044-bd93e4b8efc7.png)
+
+2. Store token on https://app.prefect.cloud/ Blocks page:
+
+![image](https://user-images.githubusercontent.com/15331990/201997292-b3a18254-229f-4689-aaec-07a990cdaf87.png)
+
+3. Copy project ID from browser URL (in red):
+
+![image](https://user-images.githubusercontent.com/15331990/202002588-55a895b2-de89-438f-ac96-c86940946336.png)
+
 ### Write and run a flow
 
 ```python
@@ -54,7 +68,7 @@ from prefect_hex.project import get_project_runs
 
 @flow
 def get_project_runs_flow():
-    hex_credentials = HexCredentials(token="a1b2c3d4")
+    hex_credentials = HexCredentials.load("hex-token")
     project_runs = get_project_runs(
         project_id='5a8591dd-4039-49df-9202-96385ba3eff8',
         hex_credentials=hex_credentials
