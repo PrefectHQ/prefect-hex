@@ -61,21 +61,44 @@ pip install prefect-hex
 ### Write and run a flow
 
 ```python
+
 from prefect import flow
 from prefect_hex import HexCredentials
 
-from prefect_hex.project import get_project_runs
+from prefect_hex.project import (
+    get_project_runs,
+    run_project,
+    get_run_status,
+    cancel_run,
+)
 
 @flow
-def get_project_runs_flow():
+def example_hex_flow():
+    # load stored credentials
     hex_credentials = HexCredentials.load("hex-token")
-    project_runs = get_project_runs(
-        project_id='5a8591dd-4039-49df-9202-96385ba3eff8',
-        hex_credentials=hex_credentials
+
+    # run project
+    project_id='5a8591dd-4039-49df-9202-96385ba3eff8',
+    project_run = run_project(project_id=project_id, hex_credentials=hex_credentials)
+
+    # get status
+    run_id = project_run.run_id
+    project_run_status = get_run_status(
+        project_id=project_id, run_id=run_id, hex_credentials=hex_credentials
     )
+    print(project_run_status.run_url)
+
+    # cancel run if needed
+    cancel_run(project_id=project_id, run_id=run_id, hex_credentials=hex_credentials)
+
+    # get list of project runs
+    project_runs = get_project_runs(
+        project_id=project_id, hex_credentials=hex_credentials
+    )
+
     return project_runs
 
-get_project_runs_flow()
+example_hex_flow()
 ```
 
 ## Resources
