@@ -60,11 +60,30 @@ pip install prefect-hex
 
 ### Write and run a flow
 
+#### Trigger a Hex project run and wait for completion
 ```python
-
 from prefect import flow
 from prefect_hex import HexCredentials
+from prefect_hex.project import trigger_project_run_and_wait_for_completion
 
+@flow
+def trigger_project_run_and_wait_for_completion_flow(project_id: str):
+    hex_credentials = HexCredentials.load("hex-token")
+    project_metadata = trigger_project_run_and_wait_for_completion(
+        project_id=project_id,
+        hex_credentials=hex_credentials
+    )
+    return project_metadata
+
+trigger_project_run_and_wait_for_completion_flow(
+    project_id="012345c6-b67c-1234-1b2c-66e4ad07b9f3"
+)
+```
+
+#### Run project, get status, cancel run, and get list of projects
+```python
+from prefect import flow
+from prefect_hex import HexCredentials
 from prefect_hex.project import (
     get_project_runs,
     run_project,
