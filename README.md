@@ -1,20 +1,20 @@
 # prefect-hex
 
-<a href="https://pypi.python.org/pypi/prefect-hex/" alt="PyPI Version">
-    <img src="https://badge.fury.io/py/prefect-hex.svg" /></a>
-<a href="https://github.com/PrefectHQ/prefect-hex/" alt="Stars">
-    <img src="https://img.shields.io/github/stars/PrefectHQ/prefect-hex" /></a>
-<a href="https://pepy.tech/badge/prefect-hex/" alt="Downloads">
-    <img src="https://pepy.tech/badge/prefect-hex" /></a>
-<a href="https://github.com/PrefectHQ/prefect-hex/pulse" alt="Activity">
-    <img src="https://img.shields.io/github/commit-activity/m/PrefectHQ/prefect-hex" /></a>
-<a href="https://github.com/PrefectHQ/prefect-hex/graphs/contributors" alt="Contributors">
-    <img src="https://img.shields.io/github/contributors/PrefectHQ/prefect-hex" /></a>
-<br>
-<a href="https://prefect-community.slack.com" alt="Slack">
-    <img src="https://img.shields.io/badge/slack-join_community-red.svg?logo=slack" /></a>
-<a href="https://discourse.prefect.io/" alt="Discourse">
-    <img src="https://img.shields.io/badge/discourse-browse_forum-red.svg?logo=discourse" /></a>
+<p align="center">
+    <a href="https://pypi.python.org/pypi/prefect-hex/" alt="PyPI version">
+        <img alt="PyPI" src="https://img.shields.io/pypi/v/prefect-hex?color=0052FF&labelColor=090422"></a>
+    <a href="https://github.com/PrefectHQ/prefect-hex/" alt="Stars">
+        <img src="https://img.shields.io/github/stars/PrefectHQ/prefect-hex?color=0052FF&labelColor=090422" /></a>
+    <a href="https://pepy.tech/badge/prefect-hex/" alt="Downloads">
+        <img src="https://img.shields.io/pypi/dm/prefect-hex?color=0052FF&labelColor=090422" /></a>
+    <a href="https://github.com/PrefectHQ/prefect-hex/pulse" alt="Activity">
+        <img src="https://img.shields.io/github/commit-activity/m/PrefectHQ/prefect-hex?color=0052FF&labelColor=090422" /></a>
+    <br>
+    <a href="https://prefect-community.slack.com" alt="Slack">
+        <img src="https://img.shields.io/badge/slack-join_community-red.svg?color=0052FF&labelColor=090422&logo=slack" /></a>
+    <a href="https://discourse.prefect.io/" alt="Discourse">
+        <img src="https://img.shields.io/badge/discourse-browse_forum-red.svg?color=0052FF&labelColor=090422&logo=discourse" /></a>
+</p>
 
 ## Welcome!
 
@@ -44,6 +44,20 @@ Install `prefect-hex` with `pip`:
 pip install prefect-hex
 ```
 
+### Gather and store authentication
+
+1. Create new token on https://app.hex.tech/ Settings page:
+
+![image](https://user-images.githubusercontent.com/15331990/201996947-07765380-50c4-4c61-9044-bd93e4b8efc7.png)
+
+2. Store token on https://app.prefect.cloud/ Blocks page:
+
+![image](https://user-images.githubusercontent.com/15331990/201997292-b3a18254-229f-4689-aaec-07a990cdaf87.png)
+
+3. Copy project ID from browser URL (in red):
+
+![image](https://user-images.githubusercontent.com/15331990/202002588-55a895b2-de89-438f-ac96-c86940946336.png)
+
 ### Write and run a flow
 
 #### Trigger a Hex project run and wait for completion
@@ -68,10 +82,8 @@ trigger_project_run_and_wait_for_completion_flow(
 
 #### Run project, get status, cancel run, and get list of projects
 ```python
-
 from prefect import flow
 from prefect_hex import HexCredentials
-
 from prefect_hex.project import (
     get_project_runs,
     run_project,
@@ -80,7 +92,7 @@ from prefect_hex.project import (
 )
 
 @flow
-def get_project_runs_flow():
+def example_hex_flow():
     # load stored credentials
     hex_credentials = HexCredentials.load("hex-token")
 
@@ -105,7 +117,7 @@ def get_project_runs_flow():
 
     return project_runs
 
-get_project_runs_flow()
+example_hex_flow()
 ```
 
 ## Resources
