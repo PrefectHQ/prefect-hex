@@ -1,6 +1,8 @@
 import pytest
 from prefect.testing.utilities import prefect_test_harness
 
+from prefect_hex import HexCredentials
+
 
 @pytest.fixture(scope="session", autouse=True)
 def prefect_db():
@@ -20,3 +22,8 @@ def reset_object_registry():
 
     with PrefectObjectRegistry():
         yield
+
+
+@pytest.fixture
+def hex_credentials() -> HexCredentials:
+    return HexCredentials(token="token")
