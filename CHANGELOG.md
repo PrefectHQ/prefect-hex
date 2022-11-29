@@ -9,8 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Added `trigger_project_run_and_wait_for_completion` flow - [#15](https://github.com/PrefectHQ/prefect-hex/pull/15)
-
 ### Changed
 
 ### Deprecated
@@ -19,9 +17,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Make `end_time` an optional field in `ProjectStatusResponsePayload` - [#14](https://github.com/PrefectHQ/prefect-hex/pull/14)
-
 ### Security
+
+## 0.1.1
+
+Released on November 28th, 2022.
+
+### Added
+
+- Added `trigger_project_run_and_wait_for_completion` flow - [#15](https://github.com/PrefectHQ/prefect-hex/pull/15)
+
+### Fixed
+
+- Make `end_time` an optional field in `ProjectStatusResponsePayload` - [#14](https://github.com/PrefectHQ/prefect-hex/pull/14)
 
 ## 0.1.0
 
