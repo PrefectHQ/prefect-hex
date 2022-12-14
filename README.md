@@ -130,7 +130,13 @@ example_hex_flow()
 
 ## Resources
 
-Read [this article](https://towardsdatascience.com/create-observable-and-reproducible-notebooks-with-hex-460e75818a09) or watch [this video](https://youtu.be/_BjqCrun4nE) to learn more about prefect-hex.
+### Blog Posts
+
+- [Create Observable and Reproducible Notebooks with Hex](https://towardsdatascience.com/create-observable-and-reproducible-notebooks-with-hex-460e75818a09) by Khuyen Tran
+
+### Videos
+
+- [Create Observable and Reproducible Notebooks with Hex: Why Hex (Part 1)](https://youtu.be/_BjqCrun4nE)
 
 If you encounter any bugs while using `prefect-hex`, feel free to open an issue in the [prefect-hex](https://github.com/PrefectHQ/prefect-hex) repository.
 
