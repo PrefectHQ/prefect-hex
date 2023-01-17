@@ -1,5 +1,7 @@
 # prefect-hex
 
+Visit the full docs [here](https://PrefectHQ.github.io/prefect-hex) to see additional examples and the API reference.
+
 <p align="center">
     <a href="https://pypi.python.org/pypi/prefect-hex/" alt="PyPI version">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/prefect-hex?color=0052FF&labelColor=090422"></a>
@@ -44,13 +46,8 @@ Install `prefect-hex` with `pip`:
 pip install prefect-hex
 ```
 
-Then, register to [view the block](https://orion-docs.prefect.io/ui/blocks/) on Prefect Cloud:
+A list of available blocks in `prefect-hex` and their setup instructions can be found [here](https://PrefectHQ.github.io/prefect-hex/#blocks-catalog).
 
-```bash
-prefect block register -m prefect_hex
-```
-
-Note, to use the `load` method on Blocks, you must already have a block document [saved through code](https://orion-docs.prefect.io/concepts/blocks/#saving-blocks) or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/).
 
 ### Gather and store authentication
 
@@ -128,6 +125,8 @@ def example_hex_flow():
 example_hex_flow()
 ```
 
+For more tips on how to use tasks and flows in a Collection, check out [Using Collections](https://orion-docs.prefect.io/collections/usage/)!
+
 ## Resources
 
 ### Blog Posts
@@ -142,17 +141,28 @@ If you encounter any bugs while using `prefect-hex`, feel free to open an issue 
 
 If you have any questions or issues while using `prefect-hex`, you can find help in either the [Prefect Discourse forum](https://discourse.prefect.io/) or the [Prefect Slack community](https://prefect.io/slack).
 
-## Development
+Feel free to star or watch [`prefect-hex`](https://github.com/PrefectHQ/prefect-hex) for updates too!
 
-If you'd like to install a version of `prefect-hex` for development, clone the repository and perform an editable install with `pip`:
-
-```bash
-git clone https://github.com/PrefectHQ/prefect-hex.git
-
-cd prefect-hex/
-
-pip install -e ".[dev]"
-
-# Install linting pre-commit hooks
-pre-commit install
+## Contributing
+ 
+-```bash
+-git clone https://github.com/PrefectHQ/prefect-hex.git
+If you'd like to help contribute to fix an issue or add a feature to `prefect-hex`, please [propose changes through a pull request from a fork of the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
+ 
+-cd prefect-hex/
+Here are the steps:
+ 
+1. [Fork the repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository)
+2. [Clone the forked repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository)
+3. Install the repository and its dependencies:
 ```
+ pip install -e ".[dev]"
+```
+4. Make desired changes
+5. Add tests
+6. Insert an entry to [CHANGELOG.md](https://github.com/PrefectHQ/prefect-hex/blob/main/CHANGELOG.md)
+7. Install `pre-commit` to perform quality checks prior to commit:
+```
+ pre-commit install
+ ```
+8. `git commit`, `git push`, and create a pull request install
