@@ -1,13 +1,13 @@
 # prefect-hex
 
-Visit the full docs [here](https://PrefectHQ.github.io/prefect-hex) to see additional examples and the API reference.
-
 <p align="center">
+    <!--- Insert a cover image here -->
+    <!--- <br> -->
     <a href="https://pypi.python.org/pypi/prefect-hex/" alt="PyPI version">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/prefect-hex?color=0052FF&labelColor=090422"></a>
     <a href="https://github.com/PrefectHQ/prefect-hex/" alt="Stars">
         <img src="https://img.shields.io/github/stars/PrefectHQ/prefect-hex?color=0052FF&labelColor=090422" /></a>
-    <a href="https://pepy.tech/badge/prefect-hex/" alt="Downloads">
+    <a href="https://pypistats.org/packages/prefect-hex/" alt="Downloads">
         <img src="https://img.shields.io/pypi/dm/prefect-hex?color=0052FF&labelColor=090422" /></a>
     <a href="https://github.com/PrefectHQ/prefect-hex/pulse" alt="Activity">
         <img src="https://img.shields.io/github/commit-activity/m/PrefectHQ/prefect-hex?color=0052FF&labelColor=090422" /></a>
