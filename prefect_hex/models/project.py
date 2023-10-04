@@ -4,7 +4,12 @@ from datetime import datetime
 from enum import Enum
 from typing import Any, Dict, List, Optional
 
-from pydantic import BaseModel, Extra, Field, HttpUrl
+from pydantic import VERSION as PYDANTIC_VERSION
+
+if PYDANTIC_VERSION.startswith("2."):
+    from pydantic.v1 import BaseModel, Extra, Field, HttpUrl
+else:
+    from pydantic import BaseModel, Extra, Field, HttpUrl
 
 
 class ProjectRunStatus(Enum):
