@@ -29,7 +29,7 @@ class HexCredentials(Block):
     """
 
     _block_type_name = "Hex Credentials"
-    _logo_url = "https://images.ctfassets.net/gm98wzqotmnx/3biMverMLGiDA7y5fkqKZF/4b7747052b59fa8182a9686b88ea9541/Hex_Purple__for_light_backgrounds_.png?h=250"  # noqa
+    _logo_url = "https://cdn.sanity.io/images/3ugk85nk/production/59acfd21aae4732c0046a18e44da08db78822baf-250x250.png"  # noqa
     _documentation_url = "https://prefecthq.github.io/prefect-hex/credentials/#prefect_hex.credentials.HexCredentials"  # noqa
 
     domain: str = Field(
